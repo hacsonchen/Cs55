@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs55Api", "Cs55Api\Cs55Api.csproj", "{57B73E66-903D-40E7-96EF-1AB7B175F5C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs55Jobs", "Cs55Jobs\Cs55Jobs.csproj", "{86E53900-8C23-4D7E-90BF-8CBC8C1F3AD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57B73E66-903D-40E7-96EF-1AB7B175F5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B73E66-903D-40E7-96EF-1AB7B175F5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B73E66-903D-40E7-96EF-1AB7B175F5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B73E66-903D-40E7-96EF-1AB7B175F5C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E53900-8C23-4D7E-90BF-8CBC8C1F3AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E53900-8C23-4D7E-90BF-8CBC8C1F3AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E53900-8C23-4D7E-90BF-8CBC8C1F3AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E53900-8C23-4D7E-90BF-8CBC8C1F3AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5929F16-1536-4624-8491-00BB0F598149}
+	EndGlobalSection
+EndGlobal
