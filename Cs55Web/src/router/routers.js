@@ -3,6 +3,10 @@ import Main from '@/components/main'
 import {
     manageCenterRouter
 } from './module/manage-center'
+import {
+    taskRouter
+}
+from './module/task'
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
  * meta: {
@@ -23,15 +27,6 @@ const defaultRouters = [{
         },
         component: () =>
             import ('@/view/login/login.vue')
-    },
-    {
-        path: '/bindEmail/:id/:email',
-        name: 'bindEmail',
-        meta: {
-            hideInMenu: true
-        },
-        component: () =>
-            import ('@/view/center/bind-email.vue')
     },
     {
         path: '/',
@@ -85,5 +80,6 @@ const defaultRouters = [{
 
 export default [
     ...defaultRouters,
+    ...taskRouter,
     ...manageCenterRouter
 ]
