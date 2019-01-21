@@ -1,0 +1,283 @@
+// 全局样式调整
+//重置主题颜色
+@import '~iview/src/styles/index.less';
+@primary-color: #05cfa4;
+body {
+    overflow-x: scroll;
+}
+
+#app {
+    .ivu-menu-dark.ivu-menu-vertical
+        .ivu-menu-item-active:not(.ivu-menu-submenu),
+    .ivu-menu-dark.ivu-menu-vertical
+        .ivu-menu-item-active:not(.ivu-menu-submenu):hover,
+    .ivu-menu-dark.ivu-menu-vertical
+        .ivu-menu-submenu-title-active:not(.ivu-menu-submenu),
+    .ivu-menu-dark.ivu-menu-vertical
+        .ivu-menu-submenu-title-active:not(.ivu-menu-submenu):hover {
+        background: transparent;
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title {
+        background: #243644;
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened {
+        background: #243644;
+        box-shadow: inset 0 2px 8px 0 rgba(0, 0, 0, 0.45);
+    }
+    .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title:hover {
+        color: #fff;
+        background: transparent;
+    }
+    .side-menu-wrapper {
+        .ivu-menu-item-active {
+            background: #243644 !important;
+            color: #05cfa4;
+        }
+    }
+    min-width: 1440px;
+    .ivu-icon {
+        font-family: 'iconfont', 'Ionicons' !important;
+        font-size: 12px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: scale(0.6) rotate(0deg);
+    }
+    .ivu-tree-arrow-open i {
+        transform: scale(0.6) rotate(90deg);
+    }
+    .ivu-menu-opened > * > .ivu-menu-submenu-title-icon {
+        transform: scale(0.6) rotate(180deg);
+    }
+    .ivu-select-visible .ivu-select-arrow {
+        transform: scale(0.6) rotate(180deg);
+        display: inline-block;
+    }
+    .ivu-icon-ios-add-circle-outline,
+    .ivu-icon-ios-remove-circle-outline,
+    .ivu-icon-ios-cloud-upload-outline {
+        transform: scale(1) rotate(0deg);
+    }
+    .ivu-icon-ios-arrow-down:before {
+        content: '\e651';
+    }
+    .ivu-icon-ios-close:before {
+        content: '\e637';
+    }
+    .ivu-icon-md-expand:before {
+        content: '\e61b';
+    }
+    .ivu-icon-md-contract:before {
+        content: '\e620';
+    }
+    .ivu-icon-ios-arrow-up:before {
+        content: '\e650';
+    }
+    .ivu-icon-ios-add:before {
+        content: '\e636';
+    }
+    .ivu-icon-ios-arrow-forward:before {
+        content: '\E653';
+    }
+    .ivu-icon-ios-loading {
+        font-size: 14px;
+        border-radius: 50%;
+    }
+    .ivu-icon-ios-calendar-outline,
+    .ivu-icon-ios-arrow-back {
+        font-size: 26px;
+    }
+    .ivu-date-picker-header {
+        .ivu-icon-ios-arrow-forward {
+            font-family: 'Ionicons' !important;
+        }
+        .ivu-icon-ios-arrow-forward:before {
+            content: '\F11F';
+        }
+    }
+    .ivu-icon-ios-brush:before {
+        content: '\e65d';
+    }
+    .ivu-select-arrow {
+        margin-top: -6px;
+        right: 0;
+    }
+    .ivu-menu-vertical .ivu-menu-submenu-title-icon {
+        top: 9px;
+    }
+    .ivu-tree-children {
+        .ivu-icon-ios-arrow-forward {
+            margin-left: -8px;
+        }
+        .ivu-icon {
+            font-size: 20px;
+            color: #515a6e;
+        } // .ivu-icon-ios-remove {
+        //     transform: scale(0.1)
+        // }
+        .ivu-icon-ios-remove {
+            opacity: 1;
+            font-weight: bold;
+        }
+        .ivu-icon-ios-remove::before {
+            color: #515a6e;
+            opacity: 0.7;
+            content: '\e7ee';
+        }
+    }
+    .ivu-input {
+        color: #262626;
+    }
+    .ivu-btn-primary :hover {
+        color: #fff;
+        background-color: #27dbb1;
+        border-color: #27dbb1;
+    }
+}
+
+.collased-menu-dropdown {
+    padding: 15px;
+}
+
+.ivu-dropdown-item {
+    padding: 15px;
+}
+
+.body-bottom {
+    margin-bottom: 24px;
+}
+
+.toolbar-top {
+    margin-bottom: 16px;
+}
+
+.toolbar {
+    button {
+        margin-right: 8px;
+    }
+}
+
+.toolbar-2 {
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.toolbar-bottom {
+    padding-top: 16px;
+    padding-left: 32px;
+    position: absolute;
+    height: 64px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fafafa;
+}
+
+.toolbar-bottom-2 {
+    position: absolute;
+    height: 64px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.ivu-card-body {
+    padding: 24px 32px !important;
+}
+
+.ivu-card-head {
+    border-bottom: 1px solid #e8eaec;
+    padding: 16px 32px;
+    line-height: 1;
+    p,
+    .ivu-card-head-inner {
+        font-size: 16px;
+    }
+}
+
+/* 清理顶部border（两个table重合时下边的去掉顶部border） */
+
+.clear-top-border {
+    border-top: 0;
+}
+
+.foot-card {
+    // margin-top: 24px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    bottom: 15px;
+    z-index: 1;
+    .ivu-card-body {
+        padding: 16px !important;
+        background: #fff;
+    }
+}
+
+.ivu-modal-body {
+    padding: 24px !important;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+input::-webkit-input-placeholder {
+    color: #dcdee2;
+}
+
+input:-ms-input-placeholder {
+    // IE10+
+    color: #dcdee2;
+}
+
+input:-moz-placeholder {
+    // Firefox4-18
+    color: #dcdee2;
+}
+
+input::-moz-placeholder {
+    // Firefox19+
+    color: #dcdee2;
+}
+
+.ivu-btn {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
+}
+
+tr.ivu-table-row-hover td {
+    background-color: #e6fff6 !important;
+}
+
+.ivu-page {
+    .ivu-page-item {
+        min-width: 24px;
+        height: 24px;
+        line-height: 22px;
+    }
+    .ivu-page-prev,
+    .ivu-page-next,
+    .ivu-select-selected-value {
+        min-width: 24px;
+        height: 24px;
+        line-height: 22px;
+    }
+    .ivu-select-selection {
+        height: 24px;
+    }
+    .ivu-select-selection .ivu-select-selected-value {
+        min-width: 24px;
+        height: 24px;
+        line-height: 22px;
+    }
+    .ivu-page-options-elevator {
+        height: 24px;
+        line-height: 25px;
+    }
+    .ivu-page-options-elevator input {
+        min-width: 24px;
+        height: 24px;
+        line-height: 22px;
+    }
+}
