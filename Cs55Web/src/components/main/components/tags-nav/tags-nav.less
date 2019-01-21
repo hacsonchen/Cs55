@@ -1,0 +1,139 @@
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.size {
+    width: 100%;
+    height: 100%;
+}
+
+.tags-nav {
+    a {
+        color: #bfbfbf;
+    }
+    a:hover {
+        color: #515a6e;
+    }
+    .ivu-tag-dot {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        padding: 0 10px;
+        color: rgba(0, 0, 0, 0.65);
+        background: #fafafa !important;
+        .ivu-icon-ios-close {
+            font-size: 12px !important;
+            margin-left: 6px !important;
+            transform: scale(0.6) rotate(0deg);
+        }
+    }
+    .ivu-tag-primary {
+        height: 40px;
+        line-height: 40px;
+        position: relative;
+        .ivu-tag-text {
+            color: #05cfa4;
+        }
+        border-bottom: none !important;
+        background: #fff !important;
+    }
+    .ivu-tag-dot-inner {
+        display: none;
+    }
+    .ivu-tag {
+        margin: 2px 3px 2px 0;
+        border-radius: 4px 4px 0px 0px;
+    }
+    line-height: 40px;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 24px;
+    background: #fff;
+    .no-select;
+    .size;
+    .close-con {
+        position: absolute;
+        right: 22px;
+        top: 0;
+        height: 100%;
+        width: 32px;
+        background: #fff;
+        text-align: center;
+        z-index: 10;
+    }
+    .btn-con {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        background: #fff;
+        padding-top: 3px;
+        z-index: 10;
+        button {
+            padding: 6px 4px;
+            line-height: 14px;
+            text-align: center;
+        }
+        &.left-btn {
+            left: 24px;
+            display: flex;
+            align-items: center;
+        }
+        &.right-btn {
+            right: 50px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .ivu-btn-text:focus {
+        box-shadow: none;
+    }
+    .scroll-outer {
+        position: absolute;
+        left: 64px;
+        right: 61px;
+        top: -3px;
+        bottom: 0;
+        width: 90%;
+        height: 45px;
+        overflow-y: auto;
+        overflow-x: hidden; // border-bottom: 1px solid #e8eaec !important;
+        .scroll-body {
+            display: inline-block;
+            padding: 1px 4px 0;
+            position: absolute;
+            overflow: visible;
+            white-space: nowrap;
+            transition: left 0.3s ease;
+            .ivu-tag-dot-inner {
+                transition: background 0.2s ease;
+            }
+        }
+    }
+    .ivu-dropdown-rel {
+        display: flex;
+        align-items: center;
+    }
+    .contextmenu {
+        position: absolute;
+        margin: 0;
+        padding: 5px 0;
+        background: #fff;
+        z-index: 100;
+        list-style-type: none;
+        border-radius: 4px;
+        box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+        li {
+            margin: 0;
+            padding: 5px 15px;
+            cursor: pointer;
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
+}
