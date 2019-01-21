@@ -17,14 +17,14 @@
               ref="myTable"
               @on-selection-change="handleSelectionChange"
               :loading="tableLoading"
-              :columns="taskcolumns"
+              :columns="taskColumns"
               :data="taskTableList"
               highlight-row
             ></Table>
             <br>
             <Tabs type="card">
               <TabPane label="常规">
-                <div class="routine">
+                <div class="tabs routine">
                   <Row>
                     <Col :span="2">
                       <span class="tab-lable span-line-height">名称：</span>
@@ -46,15 +46,42 @@
                       <span class="tab-lable span-line-height">描述：</span>
                     </Col>
                     <Col :span="21">
-                      <Input disabled type="textarea" value="庆森锅" :rows="10"></Input>
+                      <!--  -->
+                      <Input disabled value="庆森锅" type="textarea" :rows="10"></Input>
                     </Col>
                   </Row>
                 </div>
               </TabPane>
               <TabPane label="触发器">
-                
+                <div class="tabs trigger">
+                  <span>创建任务时，可以指定触发该任务的条件。若要更改这些触发器，使用“属性”命令打开任务属性页</span>
+                  <br>
+                  <Table
+                    border
+                    ref="myTable"
+                    @on-selection-change="handleSelectionChange"
+                    :loading="tableLoading"
+                    :columns="triggerColums"
+                    :data="triggerTableList"
+                    highlight-row
+                  ></Table>
+                </div>
               </TabPane>
-              <TabPane label="操作">标签三的内容</TabPane>
+              <TabPane label="操作">
+                 <div class="tabs trigger">
+                  <span>创建任务时，可以指定触发该任务的条件。若要更改这些触发器，使用“属性”命令打开任务属性页</span>
+                  <br>
+                  <Table
+                    border
+                    ref="myTable"
+                    @on-selection-change="handleSelectionChange"
+                    :loading="tableLoading"
+                    :columns="triggerColums"
+                    :data="triggerTableList"
+                    highlight-row
+                  ></Table>
+                </div>
+              </TabPane>
               <TabPane label="条件">标签三的内容</TabPane>
               <TabPane label="设置">标签三的内容</TabPane>
               <TabPane label="历史记录">标签三的内容</TabPane>
@@ -64,12 +91,12 @@
         <Card :bordered="false" class="card_operation" :dis-hover="true">
           <p slot="title">操作</p>
           <div class="program-library">
-            <span class="library">任务计划诚信库
-              <Icon type="md-arrow-dropup" size="24"/>
+            <span class="library" @click="libraryClick">任务计划诚信库
+              <Icon :type="libraryType" class="icon-right" size="24"/>
             </span>
-            <div>
+            <div v-if="libraryShow">
               <span>
-                <Icon type="ios-alarm-outline" size="24"/>创建基本任务
+                <Icon type="ios-alarm-outline"  size="24"/>创建基本任务
               </span>
               <span>
                 <Icon type="ios-alarm-outline" size="24"/>创建任务
@@ -98,10 +125,10 @@
             </div>
           </div>
           <div class="program-library">
-            <span class="library">所选项
-              <Icon type="md-arrow-dropup" size="24"/>
+            <span class="library" @click="optionsClick">所选项
+              <Icon :type="optionsType" class="icon-right" size="24"/>
             </span>
-            <div>
+            <div v-if="optionsShow">
               <span>
                 <Icon type="ios-alarm-outline" size="24"/>运行
               </span>
@@ -134,6 +161,11 @@
 export default {
   data() {
     return {
+      tableLoading:false,
+      libraryType:'md-arrow-dropup',
+      libraryShow:true,
+      optionsType:'md-arrow-dropup',
+      optionsShow:true,
       taskTreeList: [
         {
           title: "任务计划程序库",
@@ -166,6 +198,13 @@ export default {
           ]
         }
       ],
+      triggerTableList: [
+        {
+          name: "登录时",
+          information: "挡任何用户登录时触发",
+          status: "已启用"
+        }
+      ],
       taskTableList: [
         {
           name: "Adobe Acr",
@@ -179,7 +218,12 @@ export default {
           isSelect: false
         }
       ],
-      taskcolumns: [
+      triggerColums: [
+        { title: "触发器", key: "name" },
+        { title: "详细信息", key: "information", width: 500 },
+        { title: "状态", key: "status"}
+      ],
+      taskColumns: [
         { title: "名称", key: "name", width: 200 },
         { title: "状态", key: "status", width: 100 },
         { title: "触发器", key: "trigger", width: 400 },
@@ -192,7 +236,24 @@ export default {
     };
   },
   methods: {
-    treeChange() {}
+    handleSelectionChange(){},
+    treeChange() {},
+    libraryClick(){
+      this.libraryShow = !this.libraryShow
+      if(this.libraryShow){
+        this.libraryType = 'md-arrow-dropup'
+      } else{
+        this.libraryType = 'md-arrow-dropdown'
+      }
+    },
+    optionsClick(){
+      this.optionsShow = !this.optionsShow
+      if(this.optionsShow){
+        this.optionsType = 'md-arrow-dropup'
+      } else{
+        this.optionsType = 'md-arrow-dropdown'
+      }
+    }
   }
 };
 </script>
@@ -213,7 +274,12 @@ export default {
     margin-left: 1%;
     float: left;
     border: 1px solid #ccc;
-    .routine {
+
+    .tabs {
+      width: 100%;
+      span {
+        display: block;
+      }
       .ivu-row {
         margin-top: 16px;
       }
@@ -229,13 +295,14 @@ export default {
     border: 1px solid #ccc;
     .program-library {
       width: 100%;
+      margin-bottom: 16px;
       span {
         display: block;
       }
       .library {
         width: 100%;
         background-color: #9eb8d5;
-        .ivu-icon-md-arrow-dropup {
+        .icon-right {
           float: right;
         }
       }
