@@ -15,7 +15,7 @@ export const manageCenterRouter = [{
             path: 'operator_account',
             component: parentView,
             meta: {
-                title: '运营者账号管理',
+                title: '账号管理',
                 icon: '',
                 access: ['401']
             },
@@ -25,7 +25,7 @@ export const manageCenterRouter = [{
                     component: () =>
                         import('@/view/manage-center/operator-account/index.vue'),
                     meta: {
-                        title: '运营者账号管理',
+                        title: '账号管理',
                         icon: '',
                         access: ['401'],
                         logo: '运营账号设置.svg'
@@ -79,126 +79,6 @@ export const manageCenterRouter = [{
                     }
                 }
             ]
-        },
-        {
-            name: 'data_set',
-            path: 'data_set',
-            component: parentView,
-            meta: {
-                title: '数据集管理',
-                icon: '',
-                access: ['403']
-            },
-            children: [{
-                name: 'data_set_search',
-                path: 'search',
-                component: () =>
-                    import('@/view/manage-center/data-set/index.vue'),
-                meta: {
-                    title: '数据集管理',
-                    icon: '',
-                    access: ['403'],
-                    logo: '数据集管理.svg'
-                }
-            }]
-        },
-        // {
-        //     name: 'message_center',
-        //     path: 'message_center',
-        //     component: parentView,
-        //     meta: {
-        //         title: '消息中心',
-        //         icon: '',
-        //         access: ['403']
-        //     },
-        //     children: [{
-        //         name: 'business_notifications',
-        //         path: 'businessNotifications',
-        //         component: () =>
-        //             import('@/view/manage-center/message-center/businessNotifications/index.vue'),
-        //         meta: {
-        //             title: '业务通知设置',
-        //             icon: '',
-        //             access: ['403'],
-        //             logo: ''
-        //         }
-        //     }, {
-        //         name: 'sms_settings',
-        //         path: 'smsSettings',
-        //         component: () =>
-        //             import('@/view/manage-center/message-center/smsSettings/index.vue'),
-        //         meta: {
-        //             title: '短信设置',
-        //             icon: '',
-        //             access: ['403'],
-        //             logo: ''
-        //         }
-        //     }, {
-        //         name: 'sms_template',
-        //         path: 'smsTemplate',
-        //         component: () =>
-        //             import('@/view/manage-center/message-center/smsTemplate/index.vue'),
-        //         meta: {
-        //             title: '短信消息模板',
-        //             icon: '',
-        //             access: ['403'],
-        //             logo: ''
-        //         }
-        //     }, {
-        //         name: 'message_push',
-        //         path: 'messagePush',
-        //         component: () =>
-        //             import('@/view/manage-center/message-center/messagePush/index.vue'),
-        //         meta: {
-        //             title: '消息推送',
-        //             icon: '',
-        //             access: ['403'],
-        //             logo: ''
-        //         }
-        //     }]
-        // },
-        {
-            name: 'configuration_management',
-            path: 'configuration_management',
-            component: parentView,
-            meta: {
-                title: '配置管理',
-                icon: '',
-                access: ['403']
-            },
-            children: [{
-                name: 'configuration_management_parameter',
-                path: 'parameter',
-                component: () =>
-                    import('@/view/manage-center/configuration-management/index.vue'),
-                meta: {
-                    title: '系统参数配置',
-                    icon: '',
-                    access: ['40503'],
-                    logo: '自定义字段管理.svg'
-                }
-            }]
         }
-        // {
-        //     name: 'uploader',
-        //     path: 'uploader',
-        //     component: parentView,
-        //     meta: {
-        //         title: '上传测试',
-        //         icon: '',
-        //         access: ['403']
-        //     },
-        //     children: [{
-        //         name: 'uploader_test',
-        //         path: 'test',
-        //         component: () =>
-        //             import('@/view/manage-center/test.vue'),
-        //         meta: {
-        //             title: '上传测试',
-        //             icon: '',
-        //             access: ['40503']
-        //         }
-        //     }]
-        // }
     ]
 }]

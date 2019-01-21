@@ -1,5 +1,8 @@
 import Main from '@/components/main'
 // import parentView from '@/components/parent-view'
+import {
+    manageCenterRouter
+} from './module/manage-center'
 /**
  * iview-admin中meta除了原生参数外可配置的参数:
  * meta: {
@@ -81,5 +84,6 @@ const defaultRouters = [{
 ]
 
 export default [
-    ...defaultRouters
+    ...defaultRouters,
+    ...manageCenterRouter
 ]
